@@ -27,7 +27,7 @@ const EVENTS: Event[] = [
   {
     date: "20 oct 2026",
     title: "Divulgación anticipada por una filtración",
-    text: "Los detalles se filtran en foros y Calif publica accidentalmente un vídeo con una prueba de concepto. El equipo de PHP adelanta toda la comunicación oficial ante el riesgo.",
+    text: "Los detalles se filtran en foros y Calif publica accidentalmente un vídeo de la explotación. El equipo de PHP adelanta toda la comunicación oficial ante el riesgo.",
     icon: Megaphone,
     tone: "warn",
   },
@@ -48,7 +48,7 @@ const EVENTS: Event[] = [
   {
     date: "23 oct 2026",
     title: "Tercer fallo relacionado",
-    text: "PHP divulga CVE-2026-115560, un tercer RCE derivado del mismo patrón. Requiere una configuración poco habitual, se considera improbable y se corregirá en el ciclo de releases normal.",
+    text: "PHP divulga CVE-2026-115560, un tercer RCE derivado del mismo patrón. Requiere una configuración poco habitual por lo que se considera improbable y se corregirá en el ciclo de releases normal.",
     icon: FileWarning,
     tone: "warn",
   },
