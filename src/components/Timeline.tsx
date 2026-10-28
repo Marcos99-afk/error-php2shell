@@ -20,7 +20,7 @@ const EVENTS: Event[] = [
   {
     date: "17 oct 2026",
     title: "Explotación antes del parche",
-    text: "Amazon Web Services detecta intentos de explotación en producción cuatro días antes de la divulgación pública: alguien conocía el fallo antes de que existiera corrección.",
+    text: "Amazon Web Services detecta intentos de explotación en producción cuatro días antes de la divulgación pública: alguien conocía el fallo antes de que existiera una corrección.",
     icon: Radio,
     tone: "danger",
   },
