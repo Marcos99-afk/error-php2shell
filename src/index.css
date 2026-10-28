@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink-950: #0a0f1c;
+  --color-ink-900: #0e1526;
+  --color-ink-850: #121b30;
+  --color-ink-800: #17223a;
+  --color-ink-700: #223052;
+  --color-ink-600: #35476f;
+  --color-ink-300: #8fa1c7;
+  --color-ink-200: #b6c3e0;
+  --color-ink-100: #dbe3f4;
+
+  --color-alert-500: #f43f5e;
+  --color-alert-400: #fb7185;
+  --color-amberish-400: #fbbf24;
+  --color-fixed-400: #34d399;
+  --color-cyanish-400: #38bdf8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-ink-950);
+  color: var(--color-ink-100);
+}
+
+::selection {
+  background: rgba(244, 63, 94, 0.4);
+}
+
+/* layered ambient background */
+.bg-scene {
+  background:
+    radial-gradient(900px 480px at 85% -5%, rgba(244, 63, 94, 0.12), transparent 60%),
+    radial-gradient(800px 500px at -10% 15%, rgba(56, 189, 248, 0.09), transparent 60%),
+    radial-gradient(700px 600px at 50% 110%, rgba(52, 211, 153, 0.06), transparent 60%),
+    var(--color-ink-950);
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(143, 161, 199, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143, 161, 199, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), transparent 85%);
+}
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 63, 94, 0.55); }
+  60% { box-shadow: 0 0 0 9px rgba(244, 63, 94, 0); }
+}
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-out infinite;
+}
+
+@keyframes blink-caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret {
+  animation: blink-caret 1.1s step-end infinite;
+}
+
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(420%); }
+}
+.scanline {
+  animation: scan 7s linear infinite;
+}
+
+/* custom scrollbar for code blocks */
+pre::-webkit-scrollbar {
+  height: 8px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: var(--color-ink-700);
+  border-radius: 4px;
+}
